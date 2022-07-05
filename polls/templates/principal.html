@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{ % load_crispy_form_filters % }
+{% block main %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form}}
+    <h1> </h1>
+    <button type="submit" class="btn btn-success">Verificar</button>
+  </form>
+  {% if message %}
+    <h2>{{message}}</h2>
+    {% for item in resultado %}
+      <h2>{{item}}</h2>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
