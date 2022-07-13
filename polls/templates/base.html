@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <title>Revisor de textos en guarani</title>
+       <meta charset="utf-8">
+    <title> </title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/img/icono_gobierno.png" type="image/x-icon">
+
+  </head>
+   <body>
+
+      <div class="jumbotron bg-dark text-white">
+            <div class="container-fluid">
+                  <h1 class="display-4">Revisor de textos para el idioma guaraní</h1>
+                  <div class="col-md-auto">
+                     <div class="col-10">
+                        {% block main %}
+                        {% endblock %}
+                    </div>
+                  </div>
+             </div>
+      </div>
+      {% if message %}
+        <h1>{{ message }}</h1>
+        <div class="container">
+        <div class="table-responsive">
+          <table class=" table-bordered table-sm">
+                  <thead class=table-info>
+                  <tr>
+                    <th>Palabra incorrecta</th>
+                    <th>Sugerencias</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      {% for items in resultado %}
+                       <tr>
+                          <td> {{ items.0 }}</td>
+                          <td> {{ items.1 }}</td>
+                          {% endfor %}
+                       </tr>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+            <h1>
+
+            </h1>
+             <div class="container">
+             <table class="table">
+                 <thead class="table-warning">
+                  <tr>
+                    <th>Palabra sin sugerencias</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      {% for items in desconocidas %}
+                       <tr>
+                          <td> {{ items }}</td>
+                          {% endfor %}
+                       </tr>
+                  </tr>
+                </tbody>
+            </table>
+             </div>
+        {% endif %}
+          </div>
+  </body>
+       <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2022 Copyright:
+        <a class="text-reset fw-bold" href="#">UCCG</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</html>
