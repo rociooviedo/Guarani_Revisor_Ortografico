@@ -4,7 +4,7 @@
 # 
 - Este es un proyecto acerca de un revisor ortográfico para el idioma Guaraní.
 
-## Software Requerido
+## Requerimientos
 - Python
 - Pycharm u otro IDE
 - Django
