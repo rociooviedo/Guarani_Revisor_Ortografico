@@ -10,7 +10,10 @@
 - Django
 
 ### CONFIGURAR EL PROYECTO
-- Instalar las librerías con pip install nombredelalibrería
+Ejecutar en consola los siguientes comandos:
+- pip install pyspellChecker
+- pip install re
+- pip install django
 
 ## INICIALIZACIONES
 
